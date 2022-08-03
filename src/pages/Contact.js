@@ -1,18 +1,30 @@
 import React, { useState } from 'react';
+import { useRef } from 'react';
+import emailjs from 'emailjs-com';
 
 export const Contact = () => {
+    const form = useRef();
     const [contact, setContact] = useState({
         fname: '',
         email: '',
         message: ''
     });
 
-    const [mail, setMail] = useState(false);
-
 
     const handleSubmit = ( event ) => {
         event.preventDefault();
-        console.log(contact);
+        emailjs.sendForm(
+            'service_jyuspu5',
+             'template_e3518kn', 
+             form.current, 
+             'I1wL5Lr-uHukAwcxe')
+      .then((result) => {
+          console.log(result.text);
+          alert('Mail Sent will reply as soon as possible. Thank you');
+      }, (error) => {
+          console.log(error.text);
+          alert("FAILED...", error);
+      });
         setContact({fname: '', email: '', message: ''});
       };
 
@@ -63,7 +75,7 @@ export const Contact = () => {
                                     </div>
                                 </div>
                             </div>
-                            <form onSubmit={handleSubmit} className="col-12 col-md-8 mx-auto">
+                            <form ref={form} onSubmit={handleSubmit} className="col-12 col-md-8 mx-auto">
                                 <div className="form-group">
                                     <label for="nameInputIcon2">Your Name</label>
                                     <div className="input-group mb-4">

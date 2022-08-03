@@ -35,7 +35,7 @@ export const Navbar = () => {
                             </ul>
                         </div>
 
-                        <div className="-mr-2 flex md:hidden">
+                        <div style={{position: "relative"}} className="-mr-5 flex md:hidden">
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
                                 type="button"
