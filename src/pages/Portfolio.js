@@ -48,8 +48,8 @@ export const Portfolio = () => {
                                         </div>
                                     </div>
                                     <div className='row px-4 pt-2'>
-                                    <a href={item.pgithub} className="mr-4"><FaGithubSquare/></a>
-                                    <a href={item.pdemo} className="mr-4"><FaLink/></a>
+                                    <a href={item.pgithub} className="mr-4" target='_blank'><FaGithubSquare/></a>
+                                    <a href={item.pdemo} className="mr-4" target='_blank'><FaLink/></a>
                                     </div>
                                 </div>
                             </div>
