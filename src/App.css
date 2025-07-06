@@ -295,7 +295,7 @@
   text-transform: uppercase;
 }
 .about-right h1 span{
-  color: #e8e8e8;
+  color: #ffffff;
 }
 .about-right h2{
   font-weight: 600;
@@ -438,6 +438,7 @@
 .about-right h1{
   font-size: 1.5rem;
   text-transform: uppercase;
+  color: #ffffff;
 }
 .about-right h1 span{
   color: #B721FF;

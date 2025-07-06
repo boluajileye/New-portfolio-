@@ -12,7 +12,7 @@ export const About = () => {
             <div>
               <div className="shadow">
                 <div className="about-img">
-                  <img src="image/boluwatife.jpg" alt="boluwatife" />
+                  <img src="https://lh3.googleusercontent.com/a/ACg8ocKoA1wcj4yuOGc_fxZy-1KdLKV_Z-ibfZkYpz3_PhHvizzkKBYH=s576-c-no" alt="boluwatife" />
                 </div>
               </div>
 
@@ -29,8 +29,12 @@ export const About = () => {
         </div>
 
         <div className="about-right">
-          <h1>Hello<span>!</span></h1>
-          <h2>Here's who I am & what I do</h2>
+        <h1 style={{ color: 'white' }}>
+          Hello<span>!</span>
+        </h1>
+        <h2 style={{ color: 'white' }}>
+          Here's who I am & what I do
+        </h2>
 
           <div className="about-para"><p>
             I'm a seasoned web developer with expertise in building scalable web applications using Java, PHP, and modern development tools. I specialize in REST APIs and microservices, grounded in solid OOP principles and design patterns. My experience spans developing telecom systems and enhancing payment and investment platforms through maintenance and feature development.
