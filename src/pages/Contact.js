@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useRef } from 'react';
 import emailjs from 'emailjs-com';
+import axios from 'axios';
+import { wait } from '@testing-library/user-event/dist/utils';
 
 export const Contact = () => {
     const form = useRef();
@@ -11,20 +13,9 @@ export const Contact = () => {
     });
 
 
-    const handleSubmit = ( event ) => {
-        event.preventDefault();
-        emailjs.sendForm(
-            'service_jyuspu5',
-             'template_e3518kn', 
-             form.current, 
-             'I1wL5Lr-uHukAwcxe')
-      .then((result) => {
-          console.log(result.text);
-          alert('Mail Sent will reply as soon as possible. Thank you');
-      }, (error) => {
-          console.log(error.text);
-          alert("FAILED...", error);
-      });
+
+    const handleSubmit = () => {
+
         setContact({fname: '', email: '', message: ''});
       };
 
@@ -39,7 +30,7 @@ export const Contact = () => {
                                 <div className="row justify-content-center">
                                     <div className="col-12 col-md-8 text-center mb-5">
                                         <h1 className="display-2 mb-3">Get in touch today</h1>
-                                        <cp className="lead">I am Available for software engineer roles on a Full-Time, Part-Time or Contract basis as well as Internship positions..</cp>
+                                        <cp className="lead">I am available for backend software engineer roles on a Full-Time, Part-Time or Contract basis..</cp>
                                     </div>
                                 </div>
                                 <div className="row mb-5">
@@ -70,12 +61,11 @@ export const Contact = () => {
                                             </div>
                                             <h2 className="h5 icon-box-title">Email</h2>
                                             <a href="mailto:boluwatifeajileye@gmail.com">boluwatifeajileye@gmail.com</a>
-                                            <br /><a href="mailto:aobatechdigitals@gmail.com">aobatechdigitals@gmail.com</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <form ref={form} onSubmit={handleSubmit} className="col-12 col-md-8 mx-auto">
+                            {/* <form ref={form} onSubmit={handleSubmit} className="col-12 col-md-8 mx-auto">
                                 <div className="form-group">
                                     <label for="nameInputIcon2">Your Name</label>
                                     <div className="input-group mb-4">
@@ -93,7 +83,7 @@ export const Contact = () => {
                                         <div className="input-group-prepend">
                                             <span className="input-group-text"><span className="fa fa-envelope"></span></span>
                                         </div>
-                                        <input className="form-control" id="emailInputIcon2" placeholder="example@company.com" type="email" aria-label="contact email input" name="email" required
+                                        <input className="form-control" id="emailInputIcon2" placeholder="boluwatifeajileye@gmail.com" type="email" aria-label="contact email input" name="email" required
                                         value={contact.email}
                                         onChange={(e) => setContact({ ...contact, email: e.target.value})}/>
                                     </div>
@@ -106,9 +96,9 @@ export const Contact = () => {
                                     ></textarea>
                                 </div>
                                 <div className="card-footer cpx-0 mx-auto">
-                                    <button type="submit" className="btn btn-primary" >Send message</button>
+                                    <a href='mailto:boluwatifeajileye@gmail.com?subject=${encodeURIComponent("Portfolio Enquiry")}%20Message&body=${encodeURIComponent(contact.message)}`)'><button type="submit" className="btn btn-primary" >Send message</button></a>
                                 </div>
-                            </form>
+                            </form> */}
                         </div>
                     </div>
                 </div>

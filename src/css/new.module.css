@@ -16735,11 +16735,11 @@ a.text-gray-400:hover, a.text-gray-400:focus {
     color: #9fb0cb !important;
 }
 
-.text-gray-500 {
+.text-[#1e293b] {
     color: #b1bcce !important;
 }
 
-a.text-gray-500:hover, a.text-gray-500:focus {
+a.text-[#1e293b]:hover, a.text-[#1e293b]:focus {
     color: #8294b0 !important;
 }
 
@@ -16751,7 +16751,7 @@ a.text-gray-600:hover, a.text-gray-600:focus {
     color: #637da1 !important;
 }
 
-.text-gray-700 {
+.text-[#1e293b] {
     color: #66799e !important;
 }
 
@@ -32129,15 +32129,15 @@ article a:hover {
     color: rgba(209, 217, 230, 0.7) !important;
 }
 
-.text-gray-500, .text-gray-500:hover {
+.text-[#1e293b], .text-[#1e293b]:hover {
     color: #b1bcce !important;
 }
 
-.text-gray-500 a:not(.btn), .text-gray-500 h1, .text-gray-500 h2, .text-gray-500 h3, .text-gray-500 h4, .text-gray-500 h5, .text-gray-500 h6, .text-gray-500 .h1, .text-gray-500 .h2, .text-gray-500 .h3, .text-gray-500 .h4, .text-gray-500 .h5, .text-gray-500 .h6, .text-gray-500 .display-1, .text-gray-500 .display-2, .text-gray-500 .display-3, .text-gray-500 .display-4 {
+.text-[#1e293b] a:not(.btn), .text-[#1e293b] h1, .text-[#1e293b] h2, .text-[#1e293b] h3, .text-[#1e293b] h4, .text-[#1e293b] h5, .text-[#1e293b] h6, .text-[#1e293b] .h1, .text-[#1e293b] .h2, .text-[#1e293b] .h3, .text-[#1e293b] .h4, .text-[#1e293b] .h5, .text-[#1e293b] .h6, .text-[#1e293b] .display-1, .text-[#1e293b] .display-2, .text-[#1e293b] .display-3, .text-[#1e293b] .display-4 {
     color: #b1bcce;
 }
 
-.text-gray-500 .text-muted {
+.text-[#1e293b] .text-muted {
     color: rgba(177, 188, 206, 0.7) !important;
 }
 
@@ -32157,11 +32157,11 @@ article a:hover {
     color: #66799e !important;
 }
 
-.text-gray-700 a:not(.btn), .text-gray-700 h1, .text-gray-700 h2, .text-gray-700 h3, .text-gray-700 h4, .text-gray-700 h5, .text-gray-700 h6, .text-gray-700 .h1, .text-gray-700 .h2, .text-gray-700 .h3, .text-gray-700 .h4, .text-gray-700 .h5, .text-gray-700 .h6, .text-gray-700 .display-1, .text-gray-700 .display-2, .text-gray-700 .display-3, .text-gray-700 .display-4 {
+.text-[#1e293b] a:not(.btn), .text-[#1e293b] h1, .text-[#1e293b] h2, .text-[#1e293b] h3, .text-[#1e293b] h4, .text-[#1e293b] h5, .text-[#1e293b] h6, .text-[#1e293b] .h1, .text-[#1e293b] .h2, .text-[#1e293b] .h3, .text-[#1e293b] .h4, .text-[#1e293b] .h5, .text-[#1e293b] .h6, .text-[#1e293b] .display-1, .text-[#1e293b] .display-2, .text-[#1e293b] .display-3, .text-[#1e293b] .display-4 {
     color: #66799e;
 }
 
-.text-gray-700 .text-muted {
+.text-[#1e293b] .text-muted {
     color: rgba(102, 121, 158, 0.7) !important;
 }
 

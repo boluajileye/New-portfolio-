@@ -1,12 +1,11 @@
 import React from 'react';
-import { FaLinkedin, FaGithubSquare, FaFile, FaBootstrap, FaReact, FaVuejs, FaCss3Alt, FaNodeJs, FaLaravel, } from 'react-icons/fa';
-import { SiBulma, SiTailwindcss, SiMaterialui, SiJquery, SiJavascript, SiPhp, SiExpress, SiMysql, SiMongodb, SiPostgresql, SiGit } from 'react-icons/si';
+import { FaLinkedin, FaGithubSquare, FaFile, FaBootstrap, FaReact, FaVuejs, FaCss3Alt, FaNodeJs, FaLaravel, FaFilePdf, FaJava, } from 'react-icons/fa';
+import { SiBulma, SiTailwindcss, SiMaterialui, SiJquery, SiJavascript, SiPhp, SiExpress, SiMysql, SiMongodb, SiPostgresql, SiGit, SiSpringboot, SiLaravel, SiCodeigniter, SiSymfony, SiRedis, SiApachekafka, SiRabbitmq, SiOracle, SiMicrosoftsqlserver, SiAmazonaws, SiDigitalocean, SiLinux, SiDocker } from 'react-icons/si';
 import { DiYii, } from 'react-icons/di';
 
 export const About = () => {
   return (
     <>
-
       <div className="about-wrapper bg-grey-900 dark:bg-grey-200">
         <div className="about-left">
           <div className="about-left-content">
@@ -22,21 +21,23 @@ export const About = () => {
             </div>
 
             <ul className="icons">
-              <li><a href='https://www.linkedin.com/in/ajileye-boluwatife-168896198' target='_blank'><FaLinkedin /></a></li>
-              <li><a href='https://github.com/boluajileyehttps://www.linkedin.com' target='_blank'><FaGithubSquare /></a></li>
-              <li><a href='https://gitconnected.com/boluajileye/resume' target='_blank'><FaFile /></a></li>
+              <li><a href='https://www.linkedin.com/in/ajileye-boluwatife-168896198' target='_blank' rel="noopener noreferrer"><FaLinkedin /></a></li>
+              <li><a href='https://github.com/boluajileye' target='_blank' rel="noopener noreferrer"><FaGithubSquare /></a></li>
+              <li><a href='https://flowcv.com/resume/7n9w0vmw6g' target='_blank' rel="noopener noreferrer"><FaFilePdf /></a></li>
             </ul>
           </div>
-
         </div>
 
         <div className="about-right">
           <h1>Hello<span>!</span></h1>
           <h2>Here's who I am & what I do</h2>
 
-          <div className="about-para">
-            <p>I am a software engineer who enjoys solving problems as well as making things pretty and easy to use. I can't stop learning new things; the more, the better.
-              <br />I normally use Javascript for the front-end, either alone or in combination with popular frameworks like ReactJS and VueJS. I also use Sass, CSS, and, where necessary, any of their friends: Bootstrap, Material, and so on, to make the web seem nice. I also use Javascript for the backend (NodeJS, Express, MongoDB, etc). But, of course, I do PHP and Mysql whenever the project calls for it (Wordpress, Laravel, etc).</p>
+          <div className="about-para"><p>
+            I'm a seasoned web developer with expertise in building scalable web applications using Java, PHP, and modern development tools. I specialize in REST APIs and microservices, grounded in solid OOP principles and design patterns. My experience spans developing telecom systems and enhancing payment and investment platforms through maintenance and feature development.
+            <br />
+            I leverage Docker for containerization, Linux servers for deployment, and Git for version control. My workflow includes Domain-Driven Design (DDD) and Test-Driven Development (TDD) to ensure robust, high-quality code. Passionate about innovation and continuous learning, I bring strong problem-solving skills and a collaborative mindset to deliver reliable, user-focused solutions. Top projects are available on request.
+          </p>
+
           </div>
         </div>
       </div>
@@ -45,9 +46,9 @@ export const About = () => {
           <div className="wall">
             <div className="v-boxes">
               <div className="box">
-                <span className="tooltip">BOOTSTRAP</span>
+                <span className="tooltip">AWS</span>
                 <div className="box-face">
-                  <div className="box-text pl-2 pb-3"><i><FaBootstrap /></i></div>
+                  <div className="box-text pl-2 pb-3"><i><SiAmazonaws /></i></div>
                 </div>
                 <div className="box-back">
                   <div className="box-text">
@@ -60,9 +61,9 @@ export const About = () => {
                 </div>
               </div>
               <div className="box">
-                <span className="tooltip">BULMA</span>
+                <span className="tooltip">DIGITAL OCEAN</span>
                 <div className="box-face">
-                  <div className="box-text pl-2 pb-3"><i><SiBulma /></i></div>
+                  <div className="box-text pl-2 pb-3"><i><SiDigitalocean /></i></div>
                 </div>
                 <div className="box-back">
                   <div className="box-text">
@@ -75,10 +76,10 @@ export const About = () => {
                 </div>
               </div>
               <div className="box">
-                <span className="tooltip">TAILWIND</span>
+                <span className="tooltip">LINUX</span>
                 <div className="box-face">
                   <div className="box-text pl-2 pb-3">
-                    <i><SiTailwindcss /></i>
+                    <i><SiLinux /></i>
                   </div>
                 </div>
                 <div className="box-back">
@@ -92,9 +93,9 @@ export const About = () => {
                 </div>
               </div>
               <div className="box">
-                <span className="tooltip">MATERIAL-UI</span>
+                <span className="tooltip">DOCKER</span>
                 <div className="box-face">
-                  <div className="box-text pl-2 pb-3"><SiMaterialui /></div>
+                  <div className="box-text pl-2 pb-3"><SiDocker /></div>
                 </div>
                 <div className="box-back">
                   <div className="box-text">
@@ -109,9 +110,9 @@ export const About = () => {
             </div>
             <div className="v-boxes second">
               <div className="box">
-                <span className="tooltip">JQUERY</span>
+                <span className="tooltip">RABBITMQ</span>
                 <div className="box-face">
-                  <div className="box-text pl-2 pb-3"><i><SiJquery /></i></div>
+                  <div className="box-text pl-2 pb-3"><i><SiRabbitmq /></i></div>
                 </div>
                 <div className="box-back">
                   <div className="box-text">
@@ -124,9 +125,9 @@ export const About = () => {
                 </div>
               </div>
               <div className="box">
-                <span className="tooltip">REACTJS</span>
+                <span className="tooltip">APACHE KAFKA</span>
                 <div className="box-face">
-                  <div className="box-text pl-2 pb-3"><i><FaReact /></i></div>
+                  <div className="box-text pl-2 pb-3"><i><SiApachekafka /></i></div>
                 </div>
                 <div className="box-back">
                   <div className="box-text">
@@ -139,9 +140,9 @@ export const About = () => {
                 </div>
               </div>
               <div className="box">
-                <span className="tooltip">VUEJS</span>
+                <span className="tooltip">REDIS</span>
                 <div className="box-face">
-                  <div className="box-text pl-2 pb-3"><i><FaVuejs /></i></div>
+                  <div className="box-text pl-2 pb-3"><i><SiRedis /></i></div>
                 </div>
                 <div className="box-back">
                   <div className="box-text">
@@ -156,10 +157,10 @@ export const About = () => {
             </div>
             <div className="v-boxes third">
               <div className="box">
-                <span className="tooltip">JS</span>
+                <span className="tooltip">JAVA</span>
                 <div className="box-face">
                   <div className="box-text pl-2 pb-3">
-                    <i><SiJavascript /></i>
+                    <i><FaJava /></i>
                   </div>
                 </div>
                 <div className="box-back">
@@ -172,10 +173,10 @@ export const About = () => {
                 </div>
               </div>
               <div className="box">
-                <span className="tooltip">CSS</span>
+                <span className="tooltip">SPRINGBOOT</span>
                 <div className="box-face">
                   <div className="box-text pl-2 pb-3">
-                    <i><FaCss3Alt /></i>
+                    <i><SiSpringboot/></i>
                   </div>
                 </div>
                 <div className="box-back">
@@ -216,9 +217,9 @@ export const About = () => {
                 </div>
               </div>
               <div className="box">
-                <span className="tooltip">NODEJS</span>
+                <span className="tooltip">LARAVEL</span>
                 <div className="box-face">
-                  <div className="box-text pl-2 pb-3"><i><FaNodeJs /></i></div>
+                  <div className="box-text pl-2 pb-3"><i><SiLaravel /></i></div>
                 </div>
                 <div className="box-back">
                   <div className="box-text">
@@ -248,9 +249,9 @@ export const About = () => {
                 </div>
               </div>
               <div className="box">
-                <span className="tooltip">LARAVEL</span>
+                <span className="tooltip">CODEIGNITER</span>
                 <div className="box-face">
-                  <div className="box-text pl-2 pb-3"><i><FaLaravel /></i></div>
+                  <div className="box-text pl-2 pb-3"><i><SiCodeigniter /></i></div>
                 </div>
                 <div className="box-back">
                   <div className="box-text">
@@ -263,9 +264,9 @@ export const About = () => {
                 </div>
               </div>
               <div className="box">
-                <span className="tooltip">EXPRESSJS</span>
+                <span className="tooltip">SYMFONY</span>
                 <div className="box-face">
-                  <div className="box-text pl-2 pb-3"><i><SiExpress/></i></div>
+                  <div className="box-text pl-2 pb-3"><i><SiSymfony/></i></div>
                 </div>
                 <div className="box-back">
                   <div className="box-text">
@@ -327,9 +328,9 @@ export const About = () => {
                 </div>
               </div>
               <div className="box">
-                <span className="tooltip">GIT</span>
+                <span className="tooltip">MICROSOFT SQL SERVER</span>
                 <div className="box-face">
-                  <div className="box-text pl-2 pb-3"><i><SiGit /></i></div>
+                  <div className="box-text pl-2 pb-3"><i><SiMicrosoftsqlserver /></i></div>
                 </div>
                 <div className="box-back">
                   <div className="box-text">

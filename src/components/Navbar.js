@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Transition } from "@headlessui/react";
 import { useState } from 'react';
+import { FaStar } from 'react-icons/fa';
 
 export const Navbar = () => {
 
@@ -12,25 +13,88 @@ export const Navbar = () => {
             <nav className="bg-white border-gray-500 pt-2 px-1 sm:px-2 py-1 dark:bg-gray-900">
                 <div className="max-w-7xl mx-auto px-1 sm:px-3 lg:px-3">
                     <div className="flex flex-wrap justify-between items-center mx-auto px-1">
-                        <div className="flex items-center">
+                        <div className="flex items-center relative" style={{ minHeight: '2.5rem' }}>
                             <Link to="/">
-                                <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">BOLUWATIFE</span>
+                                <span className="relative inline-block">
+                                    {/* Animated, floating, navy/blue/white stars */}
+                                    <FaStar className="star-float star1 text-blue-900" size={16} style={{ filter: 'drop-shadow(0 0 6px #1e293b)' }}/>
+                                    <FaStar className="star-float star2 text-blue-500" size={13} style={{ filter: 'drop-shadow(0 0 8px #3b82f6)' }}/>
+                                    <FaStar className="star-float star3 text-blue-200" size={15} style={{ filter: 'drop-shadow(0 0 8px #e0e7ef)' }}/>
+                                    <FaStar className="star-float star4 text-white" size={10} style={{ filter: 'drop-shadow(0 0 6px #fff)' }}/>
+                                    <span className="self-center text-xl font-extrabold whitespace-nowrap dark:text-white navy-glitter-text px-2">BOLUAJILEYE</span>
+                                </span>
                             </Link>
+                            {/* Navy blue glitter effect styles */}
+                            <style>{`
+                                .navy-glitter-text {
+                                    background: linear-gradient(90deg, #0a1437 0%, #1e293b 25%, #3b82f6 50%, #e0e7ef 75%, #0a1437 100%);
+                                    background-size: 200% auto;
+                                    color: #1e293b;
+                                    background-clip: text;
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                    animation: shimmer 2.5s linear infinite;
+                                }
+                                @keyframes shimmer {
+                                    0% { background-position: 200% center; }
+                                    100% { background-position: -200% center; }
+                                }
+                                .star-float {
+                                    position: absolute;
+                                    opacity: 0.85;
+                                }
+                                .star1 {
+                                    left: -1.5rem; top: -0.5rem;
+                                    animation: float1 3s ease-in-out infinite;
+                                }
+                                .star2 {
+                                    left: 50%; top: -1.2rem;
+                                    animation: float2 2.5s ease-in-out infinite;
+                                }
+                                .star3 {
+                                    right: -1.5rem; bottom: -0.5rem;
+                                    animation: float3 3.2s ease-in-out infinite;
+                                }
+                                .star4 {
+                                    left: 0.2rem; bottom: -1.2rem;
+                                    animation: float4 2.8s ease-in-out infinite;
+                                }
+                                @keyframes float1 {
+                                    0% { transform: translateY(0) rotate(0deg); }
+                                    50% { transform: translateY(-8px) rotate(20deg); }
+                                    100% { transform: translateY(0) rotate(0deg); }
+                                }
+                                @keyframes float2 {
+                                    0% { transform: translateX(0) rotate(0deg); }
+                                    50% { transform: translateX(10px) rotate(-15deg); }
+                                    100% { transform: translateX(0) rotate(0deg); }
+                                }
+                                @keyframes float3 {
+                                    0% { transform: translateY(0) rotate(0deg); }
+                                    50% { transform: translateY(10px) rotate(15deg); }
+                                    100% { transform: translateY(0) rotate(0deg); }
+                                }
+                                @keyframes float4 {
+                                    0% { transform: translateX(0) rotate(0deg); }
+                                    50% { transform: translateX(-10px) rotate(-10deg); }
+                                    100% { transform: translateX(0) rotate(0deg); }
+                                }
+                            `}</style>
                         </div>
                         <div className="hidden w-full md:block md:w-auto">
 
                             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                                 <li>
-                                    <Link to="/" className="block py-2 pr-1 pl-1 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</Link>
+                                    <Link to="/" className="block py-2 pr-1 pl-1 text-[#1e293b] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</Link>
                                 </li>
                                 <li>
-                                    <Link to="/about" className="block py-2 pr-1 pl-1 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Me</Link>
+                                    <Link to="/about" className="block py-2 pr-1 pl-1 text-[#1e293b] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Me</Link>
                                 </li>
                                 <li>
-                                    <Link to="/portfolio" className="block py-2 pr-1 pl-1 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Portfolio</Link>
+                                    <Link to="/portfolio" className="block py-2 pr-1 pl-1 text-[#1e293b] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Portfolio</Link>
                                 </li>
                                 <li>
-                                    <Link to="/contact" className="block py-2 pr-1 pl-1 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
+                                    <Link to="/contact" className="block py-2 pr-1 pl-1 text-[#1e293b] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
                                 </li>
                             </ul>
                         </div>
@@ -98,22 +162,22 @@ export const Navbar = () => {
                                     <li>
                                         <Link 
                                         onClick={() => setIsOpen(!isOpen)}
-                                        to="/" className="block py-2 pr-1 pl-1 text-gray-700 dark:text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</Link>
+                                        to="/" className="block py-2 pr-1 pl-1 text-[#1e293b] dark:text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</Link>
                                     </li>
                                     <li>
                                         <Link 
                                 onClick={() => setIsOpen(!isOpen)}
-                                         to="/about" className="block py-2 pr-1 pl-1 text-gray-700 dark:text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Me</Link>
+                                         to="/about" className="block py-2 pr-1 pl-1 text-[#1e293b] dark:text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Me</Link>
                                     </li>
                                     <li>
                                         <Link 
                                 onClick={() => setIsOpen(!isOpen)}
-                                        to="/portfolio" className="block py-2 pr-1 pl-1 text-gray-700 dark:text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Portfolio</Link>
+                                        to="/portfolio" className="block py-2 pr-1 pl-1 text-[#1e293b] dark:text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Portfolio</Link>
                                     </li>
                                     <li>
                                         <Link 
                                 onClick={() => setIsOpen(!isOpen)}
-                                        to="/contact" className="block py-2 pr-1 pl-1 text-gray-700 dark:text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
+                                        to="/contact" className="block py-2 pr-1 pl-1 text-[#1e293b] dark:text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
                                     </li>
                                 </ul>
                             </div>

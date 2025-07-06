@@ -4,6 +4,7 @@ import { FaGithubSquare, FaLink } from 'react-icons/fa';
 
 export const Portfolio = () => {
     const [portfolio, setPortfolio] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const url = "https://boluajileye.com/boluwatife/portfolio.php";
     const fetchData = () => {
         axios({
@@ -12,13 +13,44 @@ export const Portfolio = () => {
           })
             .then((res) => {
                 setPortfolio(res.data);
+                setIsLoading(false);
             })
             .catch((err) => {
+                setIsLoading(false);
             })
         }
     useEffect(() => {
         fetchData();
-    });
+    }, []);
+
+    // Skeleton loading card
+    const LoadingCard = () => (
+        <div className="col-12 col-md-6 col-lg-4 mb-5">
+            <div className="card bg-primary border-light shadow-soft animate-pulse min-h-full" style={{ minHeight: 420 }}>
+                <div className="card-img-top rounded-top bg-gray-200 dark:bg-gray-700 w-100" style={{ height: 180 }}></div>
+                <div className="card-body flex flex-col justify-between" style={{ minHeight: 200 }}>
+                    <div>
+                        <div className="h-6 bg-gray-300 dark:bg-gray-600 rounded w-3/4 mb-2"></div>
+                        <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-2/3 mb-4"></div>
+                        <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2 mb-4"></div>
+                    </div>
+                    <div className="row mb-1">
+                        <div className="col-lg-6">
+                            <div className="mb-1">
+                                <span className="h6">Badges</span>
+                            </div>
+                            <span className="badge badge-secondary text-uppercase bg-gray-300 dark:bg-gray-600 mr-1">&nbsp;</span>
+                            <span className="badge badge-secondary text-uppercase bg-gray-300 dark:bg-gray-600 mr-1">&nbsp;</span>
+                        </div>
+                    </div>
+                    <div className='row px-4 pt-2'>
+                        <span className="bg-gray-300 dark:bg-gray-600 rounded w-8 h-8 mr-4 inline-block"></span>
+                        <span className="bg-gray-300 dark:bg-gray-600 rounded w-8 h-8 inline-block"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 
     return (
         <> <section className="bg-white dark:bg-gray-900">
@@ -26,35 +58,45 @@ export const Portfolio = () => {
                 <div className="container mt-3">
                     <div className="row">
                         <div className="col text-center">
-                            <h2 className="h5 mb-6">My completed Projects</h2>
+                            <h2 className="h5 mb-6">MY COMPLETED PROJECTS</h2>
                         </div>
                     </div>
                     <div className="row mb-5">
-                    { portfolio.map((item, index) => { return( 
-                        <div className="col-12 col-md-6 col-lg-4 mb-5" key={index+1}>
-                            <div className="card bg-primary border-light shadow-soft">
-                                <img src={item.pimage} className="card-img-top rounded-top" alt={item.pname} />
-                                <div className="card-body">
-                                    <h3 className="h5 card-title mt-1">{item.pname}</h3>
-                                    <cp className="card-text">{item.pdetails}</cp>
-                                    <div className="row mb-1">
-                                        <div className="col-lg-6">
-                                            <div className="mb-1">
-                                                <span className="h6">Badges</span>
+                    { isLoading ? (
+                        <>
+                            <LoadingCard />
+                            <LoadingCard />
+                            <LoadingCard />
+                        </>
+                    ) : (
+                        portfolio.map((item, index) => { return( 
+                            <div className="col-12 col-md-6 col-lg-4 mb-5" key={index+1}>
+                                <div className="card bg-primary border-light shadow-soft d-flex flex-column h-100" style={{ minHeight: 420 }}>
+                                    <img src={item.pimage} className="card-img-top rounded-top" alt={item.pname} style={{ height: 180, objectFit: 'cover' }} />
+                                    <div className="card-body d-flex flex-column justify-between" style={{ minHeight: 200 }}>
+                                        <div>
+                                            <h3 className="h5 card-title mt-1">{item.pname}</h3>
+                                            <cp className="card-text">{item.pdetails}</cp>
+                                            <div className="row mb-1">
+                                                <div className="col-lg-6">
+                                                    <div className="mb-1">
+                                                        <span className="h6">Badges</span>
+                                                    </div>
+                                                    { item.ptool.map((tool, index) => { return( 
+                                                    <span key={index} className="badge badge-secondary text-uppercase mr-1">{tool}</span>
+                                                    ) } ) }
+                                                </div>
                                             </div>
-                                            { item.ptool.map((tool, index) => { return( 
-                                            <span key={index} className="badge badge-secondary text-uppercase">{tool}</span>
-                                            ) } ) }
                                         </div>
-                                    </div>
-                                    <div className='row px-4 pt-2'>
-                                    <a href={item.pgithub} className="mr-4" target='_blank'><FaGithubSquare/></a>
-                                    <a href={item.pdemo} className="mr-4" target='_blank'><FaLink/></a>
+                                        <div className='row px-4 pt-2 mt-auto'>
+                                            <a href={item.pgithub} className="mr-4" target='_blank' rel="noopener noreferrer"><FaGithubSquare/></a>
+                                            <a href={item.pdemo} className="mr-4" target='_blank' rel="noopener noreferrer"><FaLink/></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                         ) } ) }
+                        ) } )
+                    )}
                     </div>
                 </div>
 </div>
