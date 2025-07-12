@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FaGithubSquare, FaLink } from 'react-icons/fa';
+import { FaLink } from 'react-icons/fa';
 
 export const Portfolio = () => {
     const [portfolio, setPortfolio] = useState([]);
@@ -37,15 +37,14 @@ export const Portfolio = () => {
                     <div className="row mb-1">
                         <div className="col-lg-6">
                             <div className="mb-1">
-                                <span className="h6">Badges</span>
+                                <span className="h6 text-underline">Tech</span>
                             </div>
-                            <span className="badge badge-secondary text-uppercase bg-gray-300 dark:bg-gray-600 mr-1">&nbsp;</span>
-                            <span className="badge badge-secondary text-uppercase bg-gray-300 dark:bg-gray-600 mr-1">&nbsp;</span>
+                            <span className="badge badge-secondary text-uppercase bg-gray-300 dark:bg-gray-600 mr-1">JAVA</span>
+                            <span className="badge badge-secondary text-uppercase bg-gray-300 dark:bg-gray-600 mr-1">PHP</span>
                         </div>
                     </div>
                     <div className='row px-4 pt-2'>
-                        <span className="bg-gray-300 dark:bg-gray-600 rounded w-8 h-8 mr-4 inline-block"></span>
-                        <span className="bg-gray-300 dark:bg-gray-600 rounded w-8 h-8 inline-block"></span>
+                    <a href="/" className="mr-4" target='_blank' rel="noopener noreferrer"><FaLink/></a>
                     </div>
                 </div>
             </div>
@@ -58,7 +57,7 @@ export const Portfolio = () => {
                 <div className="container mt-3">
                     <div className="row">
                         <div className="col text-center">
-                            <h2 className="h5 mb-6">MY COMPLETED PROJECTS</h2>
+                            <h2 className="h5 mb-3 text-secondary text-underline">MY CONTRIBUTED PROJECTS</h2>
                         </div>
                     </div>
                     <div className="row mb-5">
@@ -67,29 +66,41 @@ export const Portfolio = () => {
                             <LoadingCard />
                             <LoadingCard />
                             <LoadingCard />
+                            <LoadingCard />
+                            <LoadingCard />
+                            <LoadingCard />
                         </>
                     ) : (
                         portfolio.map((item, index) => { return( 
                             <div className="col-12 col-md-6 col-lg-4 mb-5" key={index+1}>
-                                <div className="card bg-primary border-light shadow-soft d-flex flex-column h-100" style={{ minHeight: 420 }}>
-                                    <img src={item.pimage} className="card-img-top rounded-top" alt={item.pname} style={{ height: 180, objectFit: 'cover' }} />
+                                <div className=" bg-danger border-light shadow-soft d-flex flex-column h-100" style={{ minHeight: 420 }}>
+                                    <a href={item.pdemo} target='_blank' rel="noopener noreferrer">
+                                        <img src={item.pimage} className="card-img-top rounded-top" alt={item.pname} style={{ height: 180, objectFit: 'cover' }} />
+                                    </a>
                                     <div className="card-body d-flex flex-column justify-between" style={{ minHeight: 200 }}>
                                         <div>
-                                            <h3 className="h5 card-title mt-1">{item.pname}</h3>
-                                            <cp className="card-text">{item.pdetails}</cp>
-                                            <div className="row mb-1">
+
+                                            <a href={item.pdemo} target='_blank' rel="noopener noreferrer">
+                                                <h3 className="h5 card-title mt-1 text-uppercase">{item.pname}</h3>
+                                            </a>
+                                            <div className="card-text text-justify">{item.pdetails}</div>
+                                            <div className="row mb-1 mt-1">
                                                 <div className="col-lg-6">
                                                     <div className="mb-1">
-                                                        <span className="h6">Badges</span>
+                                                        <span className="h6 text-underline">Tech</span>
                                                     </div>
-                                                    { item.ptool.map((tool, index) => { return( 
-                                                    <span key={index} className="badge badge-secondary text-uppercase mr-1">{tool}</span>
-                                                    ) } ) }
+                                                    {[...item.ptool]
+                                                    .sort(() => 0.5 - Math.random())
+                                                    .map((tool, index) => (
+                                                        <span key={index} className="badge badge-secondary text-uppercase mr-1">
+                                                        {tool}
+                                                        </span>
+                                                    ))
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
                                         <div className='row px-4 pt-2 mt-auto'>
-                                            <a href={item.pgithub} className="mr-4" target='_blank' rel="noopener noreferrer"><FaGithubSquare/></a>
                                             <a href={item.pdemo} className="mr-4" target='_blank' rel="noopener noreferrer"><FaLink/></a>
                                         </div>
                                     </div>
